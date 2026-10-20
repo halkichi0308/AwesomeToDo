@@ -38,6 +38,8 @@ jobs:
         uses: github/codeql-action/upload-sarif@v4
         with:
           sarif_file: "trivy-report.sarif"
+          category: trivy-container
+          wait-for-processing: true
       - name: Save SARIF artifact
         if: always()
         uses: actions/upload-artifact@v4
