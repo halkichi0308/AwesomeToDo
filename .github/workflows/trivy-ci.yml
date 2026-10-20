@@ -34,9 +34,7 @@ jobs:
           severity: "HIGH,CRITICAL"
           output: "trivy-report.sarif"
 
-      # スキャンレポートをGitHub Actionsのアーティファクトとして保存
       - name: Upload Trivy report
         uses: github/codeql-action/upload-sarif@v4
         with:
           sarif_file: "trivy-report.sarif"
-          path: trivy-report.sarif
